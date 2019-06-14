@@ -1,4 +1,9 @@
-class Vorsord extends LivingCreature{
+var LivingCreature = require("./LivingCreature");
+var random = require("./random.js");
+
+
+
+module.exports = class Vosrsord extends LivingCreature{
     getNewDirections() {
         this.directions = [
             [this.x - 1, this.y - 1],
@@ -13,7 +18,7 @@ class Vorsord extends LivingCreature{
     }
     mult() {
         var empty = random(this.chooseCell(0))
-
+vorsordHashiv++;
         if (empty && this.energy > 30) {
             var empty = random(this.chooseCell(0));
             var newX = empty[0];

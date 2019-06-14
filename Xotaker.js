@@ -1,4 +1,11 @@
-class Xotaker extends LivingCreature{
+
+
+var LivingCreature = require("./LivingCreature");
+var random = require("./random.js");
+
+
+
+module.exports = class Xotaker extends LivingCreature{
 
 
     getNewDirections() {
@@ -17,7 +24,7 @@ class Xotaker extends LivingCreature{
 
     mult() {
         var empty = random(this.chooseCell(0))
-
+xotakerHashiv++;
         if (empty && this.energy > 30) {
             var empty = random(this.chooseCell(0));
             var newX = empty[0];
