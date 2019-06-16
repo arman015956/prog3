@@ -59,7 +59,7 @@ module.exports = class Gishatich extends LivingCreature{
             var newY = food[1];
             matrix[newY][newX] = 3;
             matrix[this.y][this.x] = 0;
-            for (var i in xotakerArr) {
+            for (var i in XotakerArr) {
                 if (xotakerArr[i].x == newX && xotakerArr[i].y == newY) {
                     xotakerArr.splice(i, 1)
                 }

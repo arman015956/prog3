@@ -73,27 +73,28 @@ function creatingObjects() {
     for (var y = 0; y < matrix.length; y++) {
         for (var x = 0; x < matrix[y].length; x++) {
             if (matrix[y][x] == 2) {
-                var Xotaker = new Xotaker(x, y);
-                XotakerArr.push(Xotaker);
+                var xotaker = new Xotaker(x, y);
+                XotakerArr.push(xotaker);
                 xotakerHashiv++;
             } else if (matrix[y][x] == 1) {
                 var grass = new Grass(x, y);
-                GrassArr.push(Grass);
+                GrassArr.push(grass);
                 grassHashiv++;
             }
             else if (matrix[y][x] == 3) {
-                var Gishatich = new Gishatich(x, y);
-                GishatichArr.push(Gishatich);
+                var gishatich = new Gishatich(x, y);
+                GishatichArr.push(gishatich);
                 gishatichHashiv++;
             }
             else if (matrix[y][x] == 4) {
-                var Vorsord = new Vorsord(x, y);
-                VorsordArr.push(Vorsord);
+                var vorsord = new Vorsord(x, y);
+                VorsordArr.push(vorsord);
                 vorsordHashiv++;
             }
+         
             else if (matrix[y][x] == 5) {
-                var Vostikan = new Vostikan(x, y);
-                VostikanArr.push(Vostikan);
+                var vostikan = new Vostikan(x, y);
+                VostikanArr.push(vostikan);
                vostikanHashiv++;
             }
         }
@@ -143,14 +144,45 @@ function game() {
         grassCounter: grassHashiv,
         xotakerCounter: xotakerHashiv,
         gishatichCounter: gishatichHashiv,
-        vorsordCounter: vorsordHaashiv,
+        vorsordCounter: vorsordHashiv,
         vostikanCounter:vostikanHashiv,
     }
 
-    //! Send data over the socket to clients who listens "data"
+  
     io.sockets.emit("data", sendData);
 }
 
 
 
 setInterval(game, 1000)
+
+
+// weather = 'spring';
+
+// function weather()
+// {
+//   if (weather == 'spring') 
+//   {
+//     weather = 'summer';
+//     setInterval(weather,5000)
+//   }
+
+//   else if (weather == 'summer') 
+//   {
+//     weather = 'autumn';
+//     setInterval(weather,5000)
+//   }
+
+//   else if (weather == 'autumn') 
+//   {
+//     weather = 'winter';
+//     setInterval(weather,5000)
+//   }
+
+//   else if (weather == 'winter') 
+//   {
+//     weather = 'spring';
+//     setInterval(weather,5000)
+//   }
+// }
+  

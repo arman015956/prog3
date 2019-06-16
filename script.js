@@ -21,6 +21,10 @@ function setup() {
    
       matrix = data.matrix;
       grassCountElement.innerText = data.grassCounter;
+      xotakerCountElement.innerText = data.xotakerCounter;
+      gishatichCountElement.innerText = data.gishatichCounter;
+      vorsordCountElement.innerText = data.vorsordCounter;
+      vostikanCountElement.innerText = data.vostikanCounter;
 
       createCanvas(matrix[0].length * side, matrix.length * side)
   

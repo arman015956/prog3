@@ -5,7 +5,7 @@ var random = require("./random.js");
 
 
 
-module.exports = class Xotaker extends LivingCreature{
+module.exports = class Xotaker extends LivingCreature {
 
 
     getNewDirections() {
@@ -24,7 +24,7 @@ module.exports = class Xotaker extends LivingCreature{
 
     mult() {
         var empty = random(this.chooseCell(0))
-xotakerHashiv++;
+        xotakerHashiv++;
         if (empty && this.energy > 30) {
             var empty = random(this.chooseCell(0));
             var newX = empty[0];
@@ -44,7 +44,7 @@ xotakerHashiv++;
     move() {
 
         var empty = random(this.chooseCell(0));
-        this.energy -=2
+        this.energy -= 2
 
         if (empty) {
             var newX = empty[0];
@@ -64,7 +64,7 @@ xotakerHashiv++;
             var newY = food[1];
             matrix[newY][newX] = 2;
             matrix[this.y][this.x] = 0;
-            for (var i in grassArr) {
+            for (var i in GrassArr) {
                 if (grassArr[i].x == newX && grassArr[i].y == newY) {
                     grassArr.splice(i, 1)
                 }
