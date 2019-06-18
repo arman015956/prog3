@@ -52,7 +52,7 @@ function matrixGenerator(matrixSize, Grass, Xotaker, Gishatich, Vorsord, Vostika
         matrix[customY][customX] = 5;
     }
 }
-matrixGenerator(20, 1, 1, 1, 1, 1);
+matrixGenerator(10, 10, 10, 10, 10, 10);
 
 
 
@@ -121,7 +121,7 @@ function game() {
 
 
     if (GishatichArr[0] !== undefined) {
-        for (var i in XotakerArr) {
+        for (var i in GishatichArr) {
             GishatichArr[i].mult();
             GishatichArr[i].move();
             GishatichArr[i].eat();
@@ -129,9 +129,18 @@ function game() {
         }
     }
 
+    if (VostikanArr[0] !== undefined) {
+        for (var i in VostikanArr) {
+            VostikanArr[i].mult();
+            VostikanArr[i].move();
+            VostikanArr[i].eat();
+            VostikanArr[i].die();
+        }
+    }
+
 
     if (VorsordArr[0] !== undefined) {
-        for (var i in XotakerArr) {
+        for (var i in VorsordArr) {
             VorsordArr[i].mult();
             VorsordArr[i].move();
             VorsordArr[i].eat();
@@ -157,32 +166,32 @@ function game() {
 setInterval(game, 1000)
 
 
-// weather = 'spring';
+weather = 'spring';
 
-// function weather()
-// {
-//   if (weather == 'spring') 
-//   {
-//     weather = 'summer';
-//     setInterval(weather,5000)
-//   }
+function weather()
+{
+  if (weather == 'spring') 
+  {
+    weather = 'summer';
+    setInterval(weather,5000)
+  }
 
-//   else if (weather == 'summer') 
-//   {
-//     weather = 'autumn';
-//     setInterval(weather,5000)
-//   }
+  else if (weather == 'summer') 
+  {
+    weather = 'autumn';
+    setInterval(weather,5000)
+  }
 
-//   else if (weather == 'autumn') 
-//   {
-//     weather = 'winter';
-//     setInterval(weather,5000)
-//   }
+  else if (weather == 'autumn') 
+  {
+    weather = 'winter';
+    setInterval(weather,5000)
+  }
 
-//   else if (weather == 'winter') 
-//   {
-//     weather = 'spring';
-//     setInterval(weather,5000)
-//   }
-// }
+  else if (weather == 'winter') 
+  {
+    weather = 'spring';
+    setInterval(weather,5000)
+  }
+}
   

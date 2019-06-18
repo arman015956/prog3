@@ -26,7 +26,7 @@ vostikanHashiv++;
             var newY = empty[1];
             matrix[newY][newX] = 5;
             var vs = new vostikan(newX, newY);
-            vostikanArr.push(vs);
+            VostikanArr.push(vs);
 
         }
 
@@ -59,9 +59,9 @@ vostikanHashiv++;
             var newY = food[1];
             matrix[newY][newX] = 5;
             matrix[this.y][this.x] = 0;
-            for (var i in vorsordArr) {
-                if (vorsordArr[i].x == newX && vorsordArr[i].y == newY) {
-                    vorsordArr.splice(i, 1)
+            for (var i in VorsordArr) {
+                if (VorsordArr[i].x == newX && VorsordArr[i].y == newY) {
+                    VorsordArr.splice(i, 1)
                 }
             }
 
@@ -77,8 +77,8 @@ vostikanHashiv++;
         if (this.energy <= 0) {
             matrix[this.y][this.x] = 0;
             for (var i in vostikanArr) {
-                if (vostikanArr[i].x == this.x && vostikanArr[i].y == this.y) {
-                    vostikanArr.splice(i, 1)
+                if (VostikanArr[i].x == this.x && VostikanArr[i].y == this.y) {
+                    VostikanArr.splice(i, 1)
                 }
             }
         }

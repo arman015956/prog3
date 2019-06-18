@@ -11,7 +11,7 @@ function setup() {
   let xotakerCountElement = document.getElementById('xotakerCount');
   let gishatichCountElement = document.getElementById('gishatichCount');
   let vorsordCountElement = document.getElementById('vorsordCount');
-  let VostikanCountElement = document.getElementById('vostikanCount');
+  let vostikanCountElement = document.getElementById('vostikanCount');
 
  
 
@@ -27,6 +27,7 @@ function setup() {
       vostikanCountElement.innerText = data.vostikanCounter;
 
       createCanvas(matrix[0].length * side, matrix.length * side)
+      
   
       background('#acacac');
    

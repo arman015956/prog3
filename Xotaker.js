@@ -31,7 +31,7 @@ module.exports = class Xotaker extends LivingCreature {
             var newY = empty[1];
             matrix[newY][newX] = 2;
             var xt = new xotaker(newX, newY);
-            xotakerArr.push(xt);
+            XotakerArr.push(xt);
 
         }
 
@@ -65,8 +65,8 @@ module.exports = class Xotaker extends LivingCreature {
             matrix[newY][newX] = 2;
             matrix[this.y][this.x] = 0;
             for (var i in GrassArr) {
-                if (grassArr[i].x == newX && grassArr[i].y == newY) {
-                    grassArr.splice(i, 1)
+                if (GrassArr[i].x == newX && GrassArr[i].y == newY) {
+                    GrassArr.splice(i, 1)
                 }
             }
 
@@ -81,8 +81,8 @@ module.exports = class Xotaker extends LivingCreature {
         if (this.energy <= 0) {
             matrix[this.y][this.x] = 0;
             for (var i in xotakerArr) {
-                if (xotakerArr[i].x == this.x && xotakerArr[i].y == this.y) {
-                    xotakerArr.splice(i, 1)
+                if (XotakerArr[i].x == this.x && XotakerArr[i].y == this.y) {
+                    XotakerArr.splice(i, 1)
                 }
             }
         }

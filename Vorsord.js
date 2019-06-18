@@ -25,7 +25,7 @@ vorsordHashiv++;
             var newY = empty[1];
             matrix[newY][newX] = 4;
             var vr = new vorsord(newX, newY);
-            vorsordArr.push(vr);
+            VorsordArr.push(vr);
 
         }
 
@@ -58,9 +58,9 @@ vorsordHashiv++;
             var newY = food[1];
             matrix[newY][newX] = 4;
             matrix[this.y][this.x] = 0;
-            for (var i in xotakerArr) {
-                if (xotakerArr[i].x == newX && xotakerArr[i].y == newY) {
-                    xotakerArr.splice(i, 1)
+            for (var i in XotakerArr) {
+                if (XotakerArr[i].x == newX && XotakerArr[i].y == newY) {
+                    XotakerArr.splice(i, 1)
                 }
             }
 
@@ -76,8 +76,8 @@ vorsordHashiv++;
         if (this.energy <= 0) {
             matrix[this.y][this.x] = 0;
             for (var i in vorsordArr) {
-                if (vorsordArr[i].x == this.x && vorsordArr[i].y == this.y) {
-                    vorsordArr.splice(i, 1)
+                if (VorsordArr[i].x == this.x && VorsordArr[i].y == this.y) {
+                    VorsordArr.splice(i, 1)
                 }
             }
         }
