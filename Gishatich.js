@@ -71,6 +71,28 @@ module.exports = class Gishatich extends LivingCreature{
         }
     } 
 
+
+    eat1() {
+        var food = random(this.chooseCell(5));
+        if (food) {
+            var newX = food[0];
+            var newY = food[1];
+            matrix[newY][newX] = 3;
+            matrix[this.y][this.x] = 0;
+            for (var i in VostikanArr) {
+                if (VostikanArr[i].x == newX && VostikanArr[i].y == newY) {
+                    VostikanArr.splice(i, 1)
+                }
+            }
+
+            this.x = newX;
+            this.y = newY;
+            this.energy += 2;
+        }
+    } 
+
+   
+
    
 
     die() {

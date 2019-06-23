@@ -125,6 +125,7 @@ function game() {
             GishatichArr[i].mult();
             GishatichArr[i].move();
             GishatichArr[i].eat();
+            GishatichArr[i].eat1();
             GishatichArr[i].die();
         }
     }
@@ -144,6 +145,7 @@ function game() {
             VorsordArr[i].mult();
             VorsordArr[i].move();
             VorsordArr[i].eat();
+            VorsordArr[i].eat1();
             VorsordArr[i].die();
         }
     }
@@ -168,30 +170,27 @@ setInterval(game, 1000)
 
 weather = 'spring';
 
-function weather()
+setInterval(function () 
 {
   if (weather == 'spring') 
   {
     weather = 'summer';
-    setInterval(weather,5000)
+    console.log("summ");
   }
 
   else if (weather == 'summer') 
   {
     weather = 'autumn';
-    setInterval(weather,5000)
   }
 
   else if (weather == 'autumn') 
   {
     weather = 'winter';
-    setInterval(weather,5000)
   }
 
   else if (weather == 'winter') 
   {
     weather = 'spring';
-    setInterval(weather,5000)
   }
-}
-  
+}, 60000)
+
