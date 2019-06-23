@@ -78,25 +78,9 @@ module.exports = class Vorsord extends LivingCreature{
         }
     }
 
-    eat1() {
-        var food = random(this.chooseCell(3));
-        if (food) {
-            var newX = food[0];
-            var newY = food[1];
-            matrix[newY][newX] = 4;
-            matrix[this.y][this.x] = 0;
-            for (var i in XotakerArr) {
-                if (GishatichArr[i].x == newX && GishatichArr[i].y == newY) {
-                    GishatichArr.splice(i, 1)
-                }
-            }
+   
 
-
-            this.x = newX;
-            this.y = newY;
-            this.energy += 3;
-        }
-    }
+            
 
 
     die() {

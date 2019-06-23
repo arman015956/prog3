@@ -23,8 +23,8 @@ module.exports = class Gishatich extends LivingCreature{
     }
     mult() {
         var empty = random(this.chooseCell(0))
-        // 
-        if (empty && this.energy > 10) {
+       
+        if (empty && this.energy > 15) {
             var empty = random(this.chooseCell(0));
             var newX = empty[0];
             var newY = empty[1];

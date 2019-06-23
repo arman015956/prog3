@@ -14,7 +14,7 @@ mult() {
     var empty = random(this.chooseCell(0))
     this.multiply++;
     // 
-    if (empty && this.multiply > 4) {
+    if (empty && this.multiply && (weather >= 0 && weather <= 15)) {
         var empty = random(this.chooseCell(0));
         var x = empty[0];
         var y = empty[1];

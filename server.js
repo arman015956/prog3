@@ -17,6 +17,7 @@ gishatichHashiv = 30;
 vorsordHashiv = 30;
 vostikanHashiv = 30;
 matrix = [];
+weather = 0;
 
 
 function matrixGenerator(matrixSize, Grass, Xotaker, Gishatich, Vorsord, Vostikan) {
@@ -105,6 +106,11 @@ creatingObjects();
 
 
 function game() {
+    weather++
+    if(weather>20){
+        weather=0;
+    }
+
     if (GrassArr[0] !== undefined) {
         for (var i in GrassArr) {
             GrassArr[i].mult();
@@ -136,7 +142,6 @@ function game() {
             VorsordArr[i].mult();
             VorsordArr[i].move();
             VorsordArr[i].eat();
-            // VorsordArr[i].eat1();
             VorsordArr[i].die();
         }
     }
@@ -159,6 +164,7 @@ function game() {
         gishatichCounter: gishatichHashiv,
         vorsordCounter: vorsordHashiv,
         vostikanCounter:vostikanHashiv,
+        weather:weather
     }
 
   
@@ -170,31 +176,6 @@ function game() {
 setInterval(game, 1000)
 
 
-weather = 'spring';
 
-setInterval(function () 
-{
-  if (weather == 'spring') 
-  {
-    weather = 'summer'; 
-    
-    
-  }
 
-  else if (weather == 'summer') 
-  {
-    weather = 'autumn';
-  }
-
-  else if (weather == 'autumn') 
-  {
-    weather = 'winter';
-    
-  }
-
-  else if (weather == 'winter') 
-  {
-    weather = 'spring';
-  }
-}, 5000)
 
