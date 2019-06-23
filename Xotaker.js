@@ -7,8 +7,14 @@ var random = require("./random.js");
 
 module.exports = class Xotaker extends LivingCreature {
 
-
+   
+        constructor(x, y, index) {
+            super(x, y);
+            this.index = index;
+            this.energy = 10;
+        }
     getNewDirections() {
+   
         this.directions = [
             [this.x - 1, this.y - 1],
             [this.x, this.y - 1],
@@ -25,15 +31,17 @@ module.exports = class Xotaker extends LivingCreature {
     mult() {
         var empty = random(this.chooseCell(0))
         // 
-        if (empty && this.energy > 5) {
+        if (empty && this.energy > 30) {
             var empty = random(this.chooseCell(0));
             var newX = empty[0];
             var newY = empty[1];
             matrix[newY][newX] = 2;
-            var xt = new xotaker(newX, newY);
+            var xt = new Xotaker(newX, newY);
           
             XotakerArr.push(xt);
             xotakerHashiv++;
+          
+        
 
         }
 
@@ -55,6 +63,8 @@ module.exports = class Xotaker extends LivingCreature {
             matrix[this.y][this.x] = 0;
             this.x = newX;
             this.y = newY;
+           
+          
 
         }
     }
@@ -74,7 +84,8 @@ module.exports = class Xotaker extends LivingCreature {
 
             this.x = newX;
             this.y = newY;
-            this.energy += 4;
+            this.energy += 10;
+         
         }
     }
 
@@ -82,9 +93,10 @@ module.exports = class Xotaker extends LivingCreature {
     die() {
         if (this.energy <= 0) {
             matrix[this.y][this.x] = 0;
-            for (var i in xotakerArr) {
+            for (var i in XotakerArr) {
                 if (XotakerArr[i].x == this.x && XotakerArr[i].y == this.y) {
                     XotakerArr.splice(i, 1)
+                  
                 }
             }
         }

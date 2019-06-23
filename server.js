@@ -11,11 +11,11 @@ XotakerArr = [];
 GishatichArr = [];
 VorsordArr = [];
 VostikanArr = [];
-grassHashiv = 0;
-xotakerHashiv = 0;
-gishatichHashiv = 0;
-vorsordHashiv = 0;
-vostikanHashiv = 0;
+grassHashiv = 30;
+xotakerHashiv = 30;
+gishatichHashiv = 30;
+vorsordHashiv = 30;
+vostikanHashiv = 30;
 matrix = [];
 
 
@@ -52,7 +52,7 @@ function matrixGenerator(matrixSize, Grass, Xotaker, Gishatich, Vorsord, Vostika
         matrix[customY][customX] = 5;
     }
 }
-matrixGenerator(15, 5, 20, 20, 25,25);
+matrixGenerator(30, 30, 50, 30, 30,30);
 
 
 
@@ -176,8 +176,9 @@ setInterval(function ()
 {
   if (weather == 'spring') 
   {
-    weather = 'summer';
-    console.log("summ");
+    weather = 'summer'; 
+    
+    
   }
 
   else if (weather == 'summer') 
@@ -188,11 +189,12 @@ setInterval(function ()
   else if (weather == 'autumn') 
   {
     weather = 'winter';
+    
   }
 
   else if (weather == 'winter') 
   {
     weather = 'spring';
   }
-}, 60000)
+}, 5000)
 

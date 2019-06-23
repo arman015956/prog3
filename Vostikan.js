@@ -3,7 +3,12 @@ var random = require("./random.js");
 
 
 
-module.exports = class Vorsord extends LivingCreature{
+module.exports = class Vostikan extends LivingCreature{
+    constructor(x, y, index) {
+        super(x, y);
+        this.index = index;
+        this.energy = 30;
+    }
     getNewDirections() {
         this.directions = [
             [this.x - 1, this.y - 1],
@@ -20,14 +25,15 @@ module.exports = class Vorsord extends LivingCreature{
     mult() {
         var empty = random(this.chooseCell(0))
 // 
-        if (empty && this.energy > 30) {
+        if (empty && this.energy > 35) {
             var empty = random(this.chooseCell(0));
             var newX = empty[0];
             var newY = empty[1];
             matrix[newY][newX] = 5;
-            var vs = new vostikan(newX, newY);
+            var vs = new Vostikan(newX, newY);
             VostikanArr.push(vs);
             vostikanHashiv++;
+        
         }
 
 
@@ -48,6 +54,7 @@ module.exports = class Vorsord extends LivingCreature{
             matrix[this.y][this.x] = 0;
             this.x = newX;
             this.y = newY;
+           
 
         }
     }
@@ -68,7 +75,7 @@ module.exports = class Vorsord extends LivingCreature{
 
             this.x = newX;
             this.y = newY;
-            this.energy += 3;
+            this.energy += 10;
         }
     }
 
@@ -76,7 +83,7 @@ module.exports = class Vorsord extends LivingCreature{
     die() {
         if (this.energy <= 0) {
             matrix[this.y][this.x] = 0;
-            for (var i in vostikanArr) {
+            for (var i in VostikanArr) {
                 if (VostikanArr[i].x == this.x && VostikanArr[i].y == this.y) {
                     VostikanArr.splice(i, 1)
                 }

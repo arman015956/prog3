@@ -4,6 +4,11 @@ var random = require("./random.js");
 
 
 module.exports = class Gishatich extends LivingCreature{
+    constructor(x, y, index) {
+        super(x, y);
+        this.index = index;
+        this.energy = 10;
+    }
     getNewDirections() {
         this.directions = [
             [this.x - 1, this.y - 1],
@@ -19,14 +24,15 @@ module.exports = class Gishatich extends LivingCreature{
     mult() {
         var empty = random(this.chooseCell(0))
         // 
-        if (empty && this.energy > 60) {
+        if (empty && this.energy > 10) {
             var empty = random(this.chooseCell(0));
             var newX = empty[0];
             var newY = empty[1];
             matrix[newY][newX] = 3;
-            var gt = new gishatich(newX, newY);
+            var gt = new Gishatich(newX, newY);
             GishatichArr.push(gt);
             gishatichHashiv++;
+         
 
         }
 
@@ -98,7 +104,7 @@ module.exports = class Gishatich extends LivingCreature{
     die() {
         if (this.energy <= 0) {
             matrix[this.y][this.x] = 0;
-            for (var i in gishatichArr) {
+            for (var i in GishatichArr) {
                 if (GishatichArr[i].x == this.x && GishatichArr[i].y == this.y) {
                     GishatichArr.splice(i, 1)
                 }

@@ -58,30 +58,3 @@ function setup() {
 }
 }
 
-
-weather = 'spring';
-
-setInterval(function () 
-{
-  if (weather == 'spring') 
-  {
-    weather = 'summer';
-    console.log("summ");
-  }
-
-  else if (weather == 'summer') 
-  {
-    weather = 'autumn';
-  }
-
-  else if (weather == 'autumn') 
-  {
-    weather = 'winter';
-  }
-
-  else if (weather == 'winter') 
-  {
-    weather = 'spring';
-  }
-}, 60000)
-
