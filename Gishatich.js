@@ -18,7 +18,7 @@ module.exports = class Gishatich extends LivingCreature{
     }
     mult() {
         var empty = random(this.chooseCell(0))
-        gishatichHashiv++;
+        // 
         if (empty && this.energy > 60) {
             var empty = random(this.chooseCell(0));
             var newX = empty[0];
@@ -26,7 +26,7 @@ module.exports = class Gishatich extends LivingCreature{
             matrix[newY][newX] = 3;
             var gt = new gishatich(newX, newY);
             GishatichArr.push(gt);
-           
+            gishatichHashiv++;
 
         }
 

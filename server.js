@@ -52,7 +52,7 @@ function matrixGenerator(matrixSize, Grass, Xotaker, Gishatich, Vorsord, Vostika
         matrix[customY][customX] = 5;
     }
 }
-matrixGenerator(10, 10, 10, 10, 10, 10);
+matrixGenerator(15, 5, 20, 20, 25,25);
 
 
 
@@ -75,27 +75,27 @@ function creatingObjects() {
             if (matrix[y][x] == 2) {
                 var xotaker = new Xotaker(x, y);
                 XotakerArr.push(xotaker);
-                xotakerHashiv++;
+                // xotakerHashiv++;
             } else if (matrix[y][x] == 1) {
                 var grass = new Grass(x, y);
                 GrassArr.push(grass);
-                grassHashiv++;
+                // grassHashiv++;
             }
             else if (matrix[y][x] == 3) {
                 var gishatich = new Gishatich(x, y);
                 GishatichArr.push(gishatich);
-                gishatichHashiv++;
+                // gishatichHashiv++;
             }
             else if (matrix[y][x] == 4) {
                 var vorsord = new Vorsord(x, y);
                 VorsordArr.push(vorsord);
-                vorsordHashiv++;
+                // vorsordHashiv++;
             }
          
             else if (matrix[y][x] == 5) {
                 var vostikan = new Vostikan(x, y);
                 VostikanArr.push(vostikan);
-               vostikanHashiv++;
+            //    vostikanHashiv++;
             }
         }
     }
@@ -130,6 +130,16 @@ function game() {
         }
     }
 
+
+    if (VorsordArr[0] !== undefined) {
+        for (var i in VorsordArr) {
+            VorsordArr[i].mult();
+            VorsordArr[i].move();
+            VorsordArr[i].eat();
+            // VorsordArr[i].eat1();
+            VorsordArr[i].die();
+        }
+    }
     if (VostikanArr[0] !== undefined) {
         for (var i in VostikanArr) {
             VostikanArr[i].mult();
@@ -140,15 +150,7 @@ function game() {
     }
 
 
-    if (VorsordArr[0] !== undefined) {
-        for (var i in VorsordArr) {
-            VorsordArr[i].mult();
-            VorsordArr[i].move();
-            VorsordArr[i].eat();
-            VorsordArr[i].eat1();
-            VorsordArr[i].die();
-        }
-    }
+    
 
     let sendData = {
         matrix: matrix,

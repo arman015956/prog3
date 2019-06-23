@@ -24,14 +24,16 @@ module.exports = class Xotaker extends LivingCreature {
 
     mult() {
         var empty = random(this.chooseCell(0))
-        xotakerHashiv++;
-        if (empty && this.energy > 30) {
+        // 
+        if (empty && this.energy > 5) {
             var empty = random(this.chooseCell(0));
             var newX = empty[0];
             var newY = empty[1];
             matrix[newY][newX] = 2;
             var xt = new xotaker(newX, newY);
+          
             XotakerArr.push(xt);
+            xotakerHashiv++;
 
         }
 

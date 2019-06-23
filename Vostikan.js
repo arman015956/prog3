@@ -19,7 +19,7 @@ module.exports = class Vorsord extends LivingCreature{
 
     mult() {
         var empty = random(this.chooseCell(0))
-vostikanHashiv++;
+// 
         if (empty && this.energy > 30) {
             var empty = random(this.chooseCell(0));
             var newX = empty[0];
@@ -27,7 +27,7 @@ vostikanHashiv++;
             matrix[newY][newX] = 5;
             var vs = new vostikan(newX, newY);
             VostikanArr.push(vs);
-
+            vostikanHashiv++;
         }
 
 
